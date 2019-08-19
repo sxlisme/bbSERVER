@@ -13,11 +13,15 @@ var querystring = require('querystring');
 var doSql = require('./mysql/keycodeMysql.js');
 //导入文件读取的js
 var readFile = require('./readFile/readFile.js');
+//运行后自动打开浏览器
+const nodeopen = require('nodeopen');
 
+const listenPort=80;
 //服务器监听端口
-app.listen(80);
-console.log('监听localhost:8888');
-
+app.listen(listenPort);
+console.log(`监听localhost:${listenPort}`);
+//打开浏览器
+nodeopen(`http://localhost:`+listenPort);
 
 app.use(express.static(__dirname));//重点 设置静态资源
 
@@ -69,8 +73,7 @@ app.all('/*', function(req, res){
         req.on('end', function () {
 
             //（1）.对url进行解码（url会对中文进行编码）
-             reqParm = decodeURI(reqParm);
-             console.log(reqParm+'******************************');
+            reqParm = decodeURI(reqParm);            
             if (reqParm) {
                 reqParm = JSON.parse(reqParm);
                 var openurl =reqParm.openurl;
@@ -95,10 +98,8 @@ app.all('/*', function(req, res){
             reqParm += chunk;
         });  
        req.on('end', function () {
-
             //（1）.对url进行解码（url会对中文进行编码）
-             //reqParm = decodeURI(reqParm);
-             console.log(reqParm+'*******666*****');
+             //reqParm = decodeURI(reqParm);            
             if (reqParm) {
                 reqParm = JSON.parse(reqParm);
                 // var {currentPage,size} =reqParm;

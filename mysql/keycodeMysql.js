@@ -42,7 +42,7 @@ function pageQuery(res,param,total){
   //var endRows = ;
   console.log();
   var sql = `select descstr,keycode,keynamechn,keynameeng,openurl,ico from bbdb.keycode limit ${startRows},${size};`;
-  console.log(sql);
+  //console.log(sql);
   pool.getConnection((err,connection)=>{
           if(err){
             console.log(err);
