@@ -15,7 +15,7 @@ var doSql = require('./mysql/keycodeMysql.js');
 var readFile = require('./readFile/readFile.js');
 
 //服务器监听端口
-app.listen(8888);
+app.listen(80);
 console.log('监听localhost:8888');
 
 
