@@ -16,7 +16,7 @@ var readFile = require('./readFile/readFile.js');
 //运行后自动打开浏览器
 const nodeopen = require('nodeopen');
 
-const listenPort=80;
+const listenPort=8080;
 //服务器监听端口
 app.listen(listenPort);
 console.log(`监听localhost:${listenPort}`);
