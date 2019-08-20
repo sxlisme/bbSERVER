@@ -31,7 +31,6 @@ app.all('/*', function(req, res){
     console.log("请求路径："+req.url);
     var filename = req.url.split('/')[req.url.split('/').length-1];
     var suffix = req.url.split('.')[req.url.split('.').length-1];
-    console.log("文件名:"+suffix);
     var projectPath = __dirname+'/';
     if(req.url==='/'){//首页       
         res.writeHead(200, {'Content-Type': 'text/html'});
